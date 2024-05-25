@@ -61,6 +61,7 @@ section{
     margin-top: 1rem;
 }
 
+
 .header{
     position: fixed;
     top:0;
@@ -352,6 +353,18 @@ font-size: 1.8rem;
 color: black;
 padding: 1.4rem;
 text-transform: none;
+}
+.box_animal{
+    
+        width: 25rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: .5rem;
+        font-size: 1.8rem;
+        color: black;
+        padding: 1.4rem;
+        text-transform: none;
+        
 }
 .contact .reviews-slider form span{
     font-size: 1.5 rem;
