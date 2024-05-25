@@ -1,0 +1,33 @@
+extends ./layout/main.pug
+block link
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+    link(rel="stylesheet", href="/css/swiper-bundle.min.css")
+block content 
+    section.about#about
+        .row
+            .image
+                    img.abt-img(src="/img/Shrug-bro.svg", alt="")
+            .content
+                    h3 About 
+                        span(style="color: #95CA9F; font-weight: bold;") US?
+
+                    p Welcome to our website dedicated to preserving wildlife and supporting animal welfare! We are passionate about protecting endangered species and promoting biodiversity. Our platform offers valuable information about various animals, including their habitats, behaviors, and conservation statuses. Through our donation system, you can contribute to the protection and conservation of animals worldwide. Join us in our mission to make a positive impact on the planet and ensure a sustainable future for all living beings. Together, we can make a difference!
+                    a.btn(href="#contact") contact us
+                    
+    
+    section.home#home
+        .content(style="text-align:center; font-size:3rem")
+                h3 About 
+                    span(style="color:#95CA9F;") Creators
+        .row
+            .image(style="margin-left:50rem;")
+                img.abt-img(src="/img/gag-info.png", alt="",style="width:60rem; height:18rem;")
+        hr
+        .row
+            .image(style="margin-left:5rem;")
+                 img.abt-img(src="/img/tuh-info.png", alt="",style="width:60rem; height:18rem; margin-right:60rem;")
+           
+
+            
+        

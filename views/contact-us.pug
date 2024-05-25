@@ -1,0 +1,33 @@
+extends ./layout/main.pug
+block link
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+    link(rel="stylesheet", href="/css/swiper-bundle.min.css")
+block content
+    section.contact#contact
+        h1.heading(style="margin-top:7rem;")
+            span contact
+            |  us
+        
+        .row
+            .image
+                img(src="/img/Mansplaining-bro.svg", alt="#")
+        
+            form(action="/user-contact", method="post")
+                span your name
+                input(type="text", required, placeholder="Enter your full name", maxlength="50", name="name", class="box")
+                span your email
+                input(type="email", required, placeholder="Enter your valid email", maxlength="50", name="email", class="box")
+                span your number
+                input(type="number", required, placeholder="Enter your valid number", min="0", max="99999999999", name="number", class="box", onkeypress="if(this.value.length ==10 ) return flase;")
+                span Describe Your Problem 
+                input(type="text", required, placeholder="Enter your problem", maxlength="400", name="problem", class="box",style="height:10rem;")
+
+                
+                span select gender
+                .radio
+                    input(type="radio", name="gender", value="male", id="male")
+                    label(for="male") male
+                    input(type="radio", name="gender", value="female", id="female")
+                    label(for="female") female
+                input(type="submit", value="send message", class="btn", name="send")

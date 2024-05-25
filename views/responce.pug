@@ -1,0 +1,33 @@
+extends ./layout/main.pug 
+block link
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+    link(rel="stylesheet", href="/css/swiper-bundle.min.css")
+block content 
+    .grid
+        
+            if responce.length > 0
+            
+                    each res in responce 
+                        div.responcebox 
+                            .flexres
+                                h1 Name :-
+                                        h2 #{res.name} 
+                            .flexres
+                                    h1 Phone no :-
+                                            h2 #{res.number}    
+                            .flexres
+                                    h1 Email :-
+                                            h2 #{res.email}  
+                            
+                            .flexres
+                                h1 Course :-
+                                        h2 #{res.course}  
+                            .flexres
+                                h1 Gender :-
+                                        h2 #{res.gender}  
+                            form(action="/admin/delete-res", method="post")
+                                input(type="hidden", value=`${res.id}`,name="id") 
+                                button.btn(type="submit" ) Delete 
+            else   
+                h1 no

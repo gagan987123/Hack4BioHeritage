@@ -1,0 +1,19 @@
+{
+  "name": "online-edu",
+  "version": "1.0.0",
+  "description": "Create a dynamic education website using HTML, CSS, and JavaScript. Design an intuitive interface with HTML for structure, CSS for styling, and implement interactive features using JavaScript. Include responsive design for optimal viewing on various devices.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "groq-sdk": "^0.3.3",
+    "nodemon": "^3.1.0",
+    "pug": "^2.0.3"
+  }
+}

@@ -1,0 +1,22 @@
+extends ./layout/main.pug
+block link
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+    link(rel="stylesheet", href="/css/swiper-bundle.min.css")
+block content 
+    section.courses#courses
+        h3.heading(style="margin-top:6rem;") Animal 
+            span Conservation
+        p(style="font-size:2.3rem;") Animal conservation is the practice of protecting animal species and their habitats to ensure their survival and biodiversity. It involves various strategies such as habitat restoration, captive breeding, and anti-poaching efforts. Conservationists work to prevent the extinction of species by addressing threats like habitat destruction, climate change, pollution, and illegal wildlife trade. Through education, research, and community involvement, conservationists strive to promote sustainable coexistence between humans and wildlife, preserving Earth's natural heritage for future generations.
+    
+    section.conserv 
+
+    h3.heading Search Method To 
+        span Conserve Animal
+    .ai_main
+        form(action="/ai", method="post")
+            input.ai_input_box(type="text",name="data")  
+            input.btn(type="submit", value="submit")
+            
+        
+            p #{aidata}

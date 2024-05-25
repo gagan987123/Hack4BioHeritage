@@ -1,0 +1,115 @@
+extends ./layout/main.pug
+block link
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css")
+    link(rel="stylesheet", href="/css/swiper-bundle.min.css")
+block content 
+    section.home#home
+        .row
+            .content
+                h3 Eco 
+                    span Animalia
+                a.btn(href="#contact") contact us
+            .image
+                img(src="/img/Loss of biodiversity-pana (1).svg", alt="")
+
+    section.home
+        .row
+            .image 
+                 img(style="width: 150px; height: 150px; margin-left:18.5rem" src="/img/ele.png" alt="")
+
+            .facts_content 
+                h4 An average of 96 elephants are killed for their ivory in Africa each day. 
+                        h5 -Wildlife Conservation Society
+        hr
+        .row
+
+            .facts_content1
+                h4 Three rhinoceroses are killed by poachers on an average day. 
+                        h5 – One Green Planet
+            .image 
+                 img(style="width: 200px; height: 150px; margin-left:18.5rem" src="/img/rhino.png" alt="")
+   
+    section.home#home
+        .row
+            .image
+                img(src="/img/Pandas-bro.svg", alt="")
+            .content
+                h3 Know More About 
+                    span Animals
+        
+                a.btn(href="#info") Click For Info
+        section.animal#animal
+            h1.heading Endangered  
+                span species
+            .swiper.animal-slider
+                .swiper-wrapper
+                    
+                    .swiper-slide.slide
+                        img(src="/img/leopard.png", alt="#")
+                        hr
+                        h3 Amur Leopard
+                        p Native to the Primorye region of southeastern Russia and northern China, the Amur leopard is critically endangered, with fewer than 100 individuals left in the wild due to habitat loss, poaching, and prey depletion.
+                    .swiper-slide.slide
+                        img(src="/img/monkey.png", alt="")
+                        hr
+                        h3 Tapanuli Orangutan 
+                        p This recently identified species is found in the Batang Toru ecosystem in Sumatra, Indonesia. There are fewer than 800 individuals left, and they are threatened by deforestation and habitat fragmentation.
+                    
+                           
+                    .swiper-slide.slide
+                        img(src="/img/turtle.png", alt="")
+                        hr
+                        h3 Hawksbill Turtle 
+                        p  Critically endangered due to illegal trade of their shells, habitat loss, and bycatch in fishing gear. These turtles are found in tropical coral reefs around the world.
+                    .swiper-slide.slide
+                        img(src="/img/croc.png", alt="")
+                        hr
+                        h3 Gharial 
+                        p A critically endangered crocodilian found in the rivers of the Indian subcontinent. There are fewer than 1,000 adults left, primarily due to habitat loss and depletion of fish resources.
+             
+                .swiper-pagination
+
+        section.home1#home
+            .row
+                .content
+                    h3 Methods For 
+                        span Wildlife Preservation
+                    a.btn(href="#contact") contact us
+                .image
+                    img(src="/img/ani.png", alt="")
+
+
+        section.reviews#reviews
+            h1.heading user's 
+                span reviews 
+            if  index.length > 0
+             
+                .swiper.reviews-slider
+                    .swiper-wrapper
+                        for res in index
+                                    .swiper-slide.slide
+                                        p #{res.data}
+                                        .user
+                                            img(src="/img/profile.png", alt="")
+                                            .user-info
+                                                h3 #{res.name}
+                                                .starts
+                                                    i.fas.fa-star
+                                                    i.fas.fa-star
+                                                    i.fas.fa-star
+                                                    i.fas.fa-star
+                                                    i.fas.fa-star-half-alt
+                
+                    .swiper-pagination
+        section.enter_review 
+            h1.heading Give Us 
+                span reviews 
+            div.reviewbox
+                form(action="/add-review", method="post")
+                  
+                    input(type="text",name="name",class="box",placeholder="name")
+                    br
+                    textarea.box(name="review", cols="30", rows="5",placeholder="Enter review") 
+                    br    
+                    input.btn(type="submit", value="Submit") 
