@@ -14,9 +14,18 @@ block content
     h3.heading Search Method To 
         span Conserve Animal
     .ai_main
-        form(action="/ai", method="post")
-            input.ai_input_box(type="text",name="data")  
-            input.btn(type="submit", value="submit")
-            
-        
-            p #{aidata}
+            form(action="/ai", method="post")
+                input.ai_input_box(placeholder="Animal name",type="text",name="data")  
+                input.ai_input_box(placeholder="Region",type="text",name="region")
+                input.btn(type="submit", value="submit")
+    .ai_data(style=" overflow:scroll; padding:5rem;")
+
+        pre(style="font-size:2rem; overflow:scroll; padding:5rem;") #{aidata}
+    //- section     
+    //-     each line in aidata.split('\n')
+    //-         pre #{line}
+        //-  - var myArray = aidata.split("/n");
+        //-         each item in myArray
+        //-             p= item
+                //- p
+                //-     #{aidata}

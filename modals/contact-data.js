@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 let contacts = [];
-module.exports = class contact{
-    constructor(name,email,number,course,gender){
+module.exports = class contact{ 
+    constructor(name,email,number,problem  ,gender){
         this.name = name;
         this.email =  email;
         this.number = number;
-        this.course = course;
+        this.problem = problem;
         this.gender = gender;
 
     }

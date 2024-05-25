@@ -1,26 +1,9 @@
 [
   {
-    "name": "Afrin",
-    "email": "Afreen2003islam@gmail.com",
-    "number": "868689456",
-    "course": "Digital marketing",
-    "gender": "male",
-    "id": "0.6093352335235693"
-  },
-  {
-    "name": "Afrinscasc",
-    "email": "gaganarora987123@gmai.com",
-    "number": "54623",
-    "course": "DSA",
-    "gender": "male",
-    "id": "0.2684460349142701"
-  },
-  {
-    "name": "sca",
-    "email": "gaganarora987123@gmai.com",
-    "number": "65623",
-    "course": "web_dev",
-    "gender": "male",
-    "id": "0.2602117962900523"
+    "name": "Tuhin Ghosh",
+    "email": "Tuhin@gmail.com",
+    "number": "5494846546",
+    "problem": "ntg",
+    "id": "0.5632497704194352"
   }
 ]
