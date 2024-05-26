@@ -21,14 +21,54 @@ block content
         section.home#home
         .row
             .content
-                form(action="/animal-details", method="post")
-                span(style="font-size:1.5rem") Enter Name
-                br
-                input(type="text", required, placeholder="Enter Animal Name", maxlength="50", name="name", class="box_animal") 
+                form(action="/animal_details", method="post")
+                    span(style="font-size:1.5rem") Enter Name
+                    br
+                    input(type="text", required, placeholder="Enter Animal Name", maxlength="50", name="animal", class="box_animal") 
+                    br
+                    input.btn(type="submit" value="submit")
 
-
-
-        
-         
-         
-        
+        section#animal-details
+            .container
+                .row
+                    .col-md-12(style="font-size:3rem;")
+                        
+                            h1 Animal Details
+                            hr
+                            ul
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Name:   
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.name}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Locations:   
+                                    each location in animalDetails.locations
+                                        span(style="margin-bottom: 10px; font-weight: 100;")= location
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Name of Young:   
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.name_of_young}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Habitat:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.habitat}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Diet:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.diet}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Common Name:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.common_name}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Lifespan:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.lifespan}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Weight:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.weight}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Height:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.height}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Group:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.group}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Color:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.color}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Skin Type:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.skin_type}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Biggest Threat:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.biggest_threat}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Most Distinctive Feature:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.most_distinctive_feature}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Scientific Name:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.scientific_name}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Estimated Population Size:  
+                                    span(style="margin-bottom: 10px; font-weight: 100;") #{animalDetails.estimated_population_size}
+                                li(style="margin-bottom: 10px; font-weight: bold; margin:1rem;") Age of Weaning:  
+                                    span(style="margin-bottom: 10px; font-weight: 100; ") #{animalDetails.age_of_weaning} margin:1rem;
+                        

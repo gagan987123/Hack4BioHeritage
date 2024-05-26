@@ -25,25 +25,72 @@ router.get('/',(req,res,next)=>{
    
   
 })
-router.get('/about-animals',(req,res,next)=>{
-    res.render('about-animals');
-})
-router.post('/about-animals',(req,res,next)=>{
+router.get('/animal',(req,res,next)=>{
+
+    res.render('about-animal');
+});
+
+router.post('/animal_details',(req,res,next)=>{
     let animal = req.body.animal;
     
     request.get({
-      url: 'https://api.api-ninjas.com/v1/animals?name=' + animal,
-      headers: {
-        'X-Api-Key': process.env.API_KEY
-      },
+        url: 'https://api.api-ninjas.com/v1/animals?name=' + animal,
+        headers: {
+            'X-Api-Key': process.env.API_KEY
+        },
     }, function(error, response, body) {
-      if(error) return console.error('Request failed:', error);
-      else if(response.statusCode != 200) return console.error('Error:', response.statusCode, body.toString('utf8'));
-      else res.send(body);
-    });
+        if(error) {
+            console.error('Request failed:', error);
+            res.status(500).send('Error: Failed to fetch data from the API');
+        } else if(response.statusCode != 200) {
+            console.error('Error:', response.statusCode, body.toString('utf8'));
+            res.status(response.statusCode).send('Error: Unexpected response from the API');
+        } else {
+            try {
+                const data = JSON.parse(body);
 
-  
-})
+                if(data && data.length > 0) {
+                    // Extract the relevant attributes from the data
+                    const { name, locations, characteristics } = data[0];
+                    const { name_of_young, habitat, diet, common_name, lifespan, weight, height, 
+                            group, color, skin_type, biggest_threat, most_distinctive_feature, 
+                            scientific_name, estimated_population_size, age_of_weaning } = characteristics;
+
+                    // Store them in a variable
+                    const animalDetails = {
+                        name,
+                        locations,
+                        name_of_young,
+                        habitat,
+                        diet,
+                        common_name,
+                        lifespan,
+                        weight,
+                        height,
+                        group,
+                        color,
+                        skin_type,
+                        biggest_threat,
+                        most_distinctive_feature,
+                        scientific_name,
+                        estimated_population_size,
+                        age_of_weaning
+                    };
+
+                    // Send the extracted data as a response
+                    // console.log(animalDetails);
+                    res.render('animal_details', { animalDetails });
+                } else {
+                    console.error('Error: No data found for animal:', animal);
+                    res.status(404).send('Error: No data found for the requested animal');
+                }
+            } catch (parseError) {
+                console.error('Error parsing JSON:', parseError);
+                res.status(500).send('Error: Failed to parse API response');
+            }
+        }
+    });
+});
 router.post('/ai',async(req,res,nest)=>{
     const data = req.body.data;
     const region = req.body.region;
