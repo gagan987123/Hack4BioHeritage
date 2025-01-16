@@ -1,7 +1,7 @@
 const express = require( 'express');
 const router = express.Router();
 const contacting = require('../modals/contact-data');
-router.get('/All-reponce',(req,res,next)=>{
+router.get('/All-responce',(req,res,next)=>{
     contacting.fatchAll((contact)=>{
         console.log(contact);
         res.render('responce',{
